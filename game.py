@@ -1,9 +1,11 @@
 from classes.humans import wizard, ninja, pirate, human
-from classes.monsters import ghoul, zombie
+from classes.monsters import ghoul, zombie, monster
+from classes import player
 
 michelangelo = ninja.Ninja("Michelanglo")
 jack_sparrow = pirate.Pirate("Jack Sparrow")
 gandalf = wizard.Wizard("Gandalf")
+print(gandalf)
 gollum = ghoul.Ghoul("Gollum")
 lich_king = zombie.Zombie("Lich King")
 # jack_sparrow.show_stats()
@@ -25,4 +27,6 @@ michelangelo.show_stats()
 gandalf.show_stats()
 lich_king.show_stats()
 print(michelangelo)
-print(human.Human.all_humans())
+print(monster.Monster.total_monsters)
+print(human.Human.total_humans)
+print(player.Player.total_players)

@@ -1,23 +1,13 @@
-class Monster:
+from classes.player import Player
+class Monster(Player):
+  total_monsters = 0
   def __init__(self):
-    self.health = 100
-    self.isLiving = True
+    super().__init__()
+    Monster.total_monsters += 1
+    Player.total_players += 1
 
   def attack ( self , victim, weapon = False ):
-    if self.isLiving:
-      if victim.isLiving:
-        if weapon:
-          victim.health -= weapon.damage
-        else:
-          victim.health -= self.strength
-        if victim.health <= 0:
-          victim.isLiving = False
-          print(f"You are the victor over {victim.name}.\n")
-      else:
-        print(f"Dont kick a dead {victim.name}.\n")
-    else:
-      print(f"You cant attack {victim.name}... your dead.\n")
-    return self
+    return super().attack( victim, weapon)
 
   def show_stats( self ):
-    print(f"Name: {self.name}\nStrength: {self.strength}\nSpeed: {self.speed}\nHealth: {self.health}\nIsLiving: {self.isLiving}\n")
+    super().show_stats()
